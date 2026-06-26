@@ -9,7 +9,6 @@ import org.springframework.web.client.RestClient;
 
 /**
  * Configuración del {@link RestClient} usado por el adapter de indexación AI.
- * La base-url se externaliza en {@code ai-index.client.base-url}.
  */
 @Configuration
 public class AIIndexRestClientConfig {
