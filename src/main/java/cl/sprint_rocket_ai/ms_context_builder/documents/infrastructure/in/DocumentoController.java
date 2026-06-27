@@ -19,7 +19,7 @@ import java.util.List;
 public interface DocumentoController {
 
 	@Operation(
-			summary = "Busca todos los documentos"
+			summary = "Busca documento por id"
 	)
 	@ApiResponse(
 			responseCode = "200",
@@ -52,7 +52,6 @@ public interface DocumentoController {
 			content = @Content(mediaType = "application/json",
 					schema = @Schema(implementation = DocumentoResponse.class))
 	)
-	@ApiResponse(responseCode = "400", description = "Solicitud inválida")
 	ResponseEntity<DocumentoResponse> deleteById(
 			@Parameter(description = "ID del documento") String id
 	);
