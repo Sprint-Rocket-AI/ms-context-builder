@@ -17,7 +17,7 @@ import java.util.List;
                   "criteriosAceptacion": [
                     "El usuario debe poder registrarse con email",
                     "Se debe validar el correo"
-                  ],
+                  ]
                 }
                 """
 )
