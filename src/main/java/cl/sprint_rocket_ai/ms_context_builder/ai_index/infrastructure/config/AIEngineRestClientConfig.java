@@ -7,14 +7,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestClient;
 
-/**
- * Configuración del {@link RestClient} usado por el adapter de indexación AI.
- */
 @Configuration
-public class AIIndexRestClientConfig {
+public class AIEngineRestClientConfig {
 
-    @Bean("aiIndexRestClient")
-    public RestClient aiIndexRestClient(@Value("${ai-index.client.base-url}") String baseUrl) {
+    @Bean("aiEngineRestClient")
+    public RestClient aiEngineRestClient(@Value("${ms-ai-engine.base-url}") String baseUrl) {
         return RestClient.builder()
                 .baseUrl(baseUrl)
                 .defaultHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
