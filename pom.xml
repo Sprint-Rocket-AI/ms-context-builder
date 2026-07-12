@@ -29,15 +29,18 @@
     <properties>
         <java.version>25</java.version>
         <spring-ai.version>2.0.0-M6</spring-ai.version>
+        <sonar.coverage.exclusions>
+            **/MsContextBuilderApplication.java,
+            **/dtos/**,
+            **/models/**,
+            **/entity/**,
+            **/events/**
+        </sonar.coverage.exclusions>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,7 +54,7 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation-test</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -84,12 +87,25 @@
                 </execution>
                 <execution>
                     <id>report</id>
-                    <phase>test</phase>
+                    <phase>verify</phase>
                     <goals>
                         <goal>report</goal>
                     </goals>
                 </execution>
             </executions>
+                <configuration>
+
+                    <excludes>
+
+                        <exclude>**/*Application.class</exclude>
+                        <exclude>**/dtos/**</exclude>
+                        <exclude>**/models/**</exclude>
+                        <exclude>**/entity/**</exclude>
+                        <exclude>**/events/**</exclude>
+
+                    </excludes>
+
+                </configuration>
             </plugin>
         </plugins>
     </build>
